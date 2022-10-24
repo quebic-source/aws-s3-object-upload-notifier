@@ -37,7 +37,7 @@ export default class FileUploadTriggerStack {
             }),
         });
         new aws.iam.RolePolicyAttachment(`file-upload-policy-att`, {
-            role: func.lambdaFunc.role,
+            role: func.role,
             policyArn: policy.arn,
         });
     }
