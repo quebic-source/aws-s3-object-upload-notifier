@@ -1,0 +1,24 @@
+{
+  "name": "aws-athena-s3-upload-api-demo",
+  "version": "1.0.0",
+  "description": "aws-athena-s3-upload-api-demo",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/a9759/aws-athena-s3-upload-api-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/a9759/aws-athena-s3-upload-api-demo/issues"
+  },
+  "homepage": "https://gitlab.com/a9759/aws-athena-s3-upload-api-demo#readme"
+}

@@ -1,0 +1,9 @@
+config:
+  aws:allowedAccountIds:
+  - 893502944061
+  aws:region: us-east-1
+  project:resourceNamePrefix: s3-object-upload-notifier
+  project:emailNotify:
+    subject: S3 Upload Notify
+    sender: tharanganilupul@gmail.com
+    receivers: email2@gmail.com,email1@gmail.com
