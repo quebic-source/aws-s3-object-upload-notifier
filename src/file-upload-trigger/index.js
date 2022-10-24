@@ -22,7 +22,7 @@ const emailNotify = async (bucket, key) => {
 }
 
 exports.handler = async function (event, context) {
-    console.log("event", event);
+    console.log("event", JSON.stringify(event));
     try {
         const records = event['Records'];
         const record = records[0];
