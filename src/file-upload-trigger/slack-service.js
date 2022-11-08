@@ -8,10 +8,10 @@ class SlackService {
         });
     }
 
-    async sendMessage(text) {
+    async sendMessage(text, channel) {
         let params = {
             mrkdwn: true,
-            channel: process.env.SLACK_CHANNEL,
+            channel,
             text,
         };
         const result = await this.client.chat.postMessage(params);

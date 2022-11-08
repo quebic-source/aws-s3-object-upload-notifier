@@ -1,8 +1,8 @@
-
 const SESService = require("./ses-service");
 const SlackService = require("./slack-service");
 const sesService = new SESService();
 const slackService = new SlackService();
+const fs = require('fs');
 
 const emailNotify = async (bucket, key) => {
     try {
@@ -25,7 +25,12 @@ const emailNotify = async (bucket, key) => {
 
 const slackNotify = async (bucket, key) => {
     try {
-        await slackService.sendMessage(`Bucket : *${bucket}*, Object : *${key}*`);
+        let bucketChannelMap = JSON.parse(fs.readFileSync('bucket-channel-map.json'));
+        const channel = bucketChannelMap[bucket];
+        if (!channel) {
+            throw new Error(`channel not found for ${bucket}`)
+        }
+        await slackService.sendMessage(`Bucket : *${bucket}*, Object : *${key}*`, channel);
     } catch (e) {
         console.error('slackNotify failed', e);
     }

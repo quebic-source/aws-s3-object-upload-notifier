@@ -13,17 +13,40 @@ beforeEach(() => {
 test('success test', async () => {
     const func = require("../../src/file-upload-trigger");
     const event = {
-        Records: [
+        "Records": [
             {
-                s3: {
-                    bucket: {
-                        name: 'test-bucket',
+                "eventVersion": "2.1",
+                "eventSource": "aws:s3",
+                "awsRegion": "us-east-1",
+                "eventTime": "2022-11-08T22:46:25.736Z",
+                "eventName": "ObjectCreated:Put",
+                "userIdentity": {
+                    "principalId": "A1BASA2MOHN0I4"
+                },
+                "requestParameters": {
+                    "sourceIPAddress": "24.78.189.82"
+                },
+                "responseElements": {
+                    "x-amz-request-id": "TZVZKAE3TZGJW0PQ",
+                    "x-amz-id-2": "CQ2sO9u80g2SlDaz7Lj6kxh8H9lNMcAxzYPth3RY+Lrjh+dwPwXKswf1sYCjn9bm85GWCi+lkpG8jBukjI9D952RfKqKzlH1"
+                },
+                "s3": {
+                    "s3SchemaVersion": "1.0",
+                    "configurationId": "8af3a2e5-4cab-41b0-82a9-f7ef90e7f86e",
+                    "bucket": {
+                        "name": "athena-demo-test-1",
+                        "ownerIdentity": {
+                            "principalId": "A1BASA2MOHN0I4"
+                        },
+                        "arn": "arn:aws:s3:::athena-demo-test-1"
                     },
-                    object: {
-                        key: 'obj-1'
+                    "object": {
+                        "key": "Screen+Shot+2022-11-07+at+2.28.23+PM+%282%29.png",
+                        "size": 245361,
+                        "eTag": "6c683c9895e3a81364b3531c1fdd187b",
+                        "sequencer": "00636ADC41A3855911"
                     }
                 }
-
             }
         ]
     };
